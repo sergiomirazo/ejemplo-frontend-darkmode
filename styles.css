@@ -1,0 +1,116 @@
+:root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #e67e22; /* Naranja apetitoso */
+            --secondary-color: #2c3e50;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --nav-bg: #ffffff;
+        }
+
+        /* Variables para Modo Oscuro */
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --primary-color: #d35400;
+            --secondary-color: #ecf0f1;
+            --card-bg: #2d2d2d;
+            --shadow: 0 4px 6px rgba(0,0,0,0.5);
+            --nav-bg: #2d2d2d;
+        }
+
+        /* --- ESTILOS GENERALES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; transition: background-color 0.3s, color 0.3s; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        
+        /* --- NAVBAR --- */
+        header {
+            background-color: var(--nav-bg);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-color); }
+        
+        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .cart-icon { position: relative; cursor: pointer; font-size: 1.2rem; }
+        .cart-count { 
+            position: absolute; top: -8px; right: -8px; 
+            background: var(--primary-color); color: white; 
+            font-size: 0.7rem; padding: 2px 6px; border-radius: 50%; 
+        }
+        
+        /* Botón de Tema */
+        .theme-toggle {
+            background: none; border: 2px solid var(--text-color);
+            color: var(--text-color); padding: 5px 10px;
+            cursor: pointer; border-radius: 20px; font-size: 0.9rem;
+        }
+        .theme-toggle:hover { background: var(--text-color); color: var(--bg-color); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center; padding: 4rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            color: white;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .btn-cta {
+            background-color: var(--primary-color); color: white;
+            padding: 10px 25px; text-decoration: none; border-radius: 5px;
+            font-weight: bold; display: inline-block; margin-top: 10px;
+        }
+
+        /* --- PRODUCTOS --- */
+        .menu-section { padding: 3rem 5%; }
+        .section-title { text-align: center; margin-bottom: 2rem; color: var(--primary-color); }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex; flex-direction: column;
+        }
+        .product-img { width: 100%; height: 200px; object-fit: cover; }
+        .product-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .product-desc { font-size: 0.9rem; opacity: 0.8; margin-bottom: 1rem; flex-grow: 1; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .price { font-weight: bold; font-size: 1.1rem; }
+        .btn-add {
+            background-color: var(--primary-color); color: white; border: none;
+            padding: 8px 15px; border-radius: 5px; cursor: pointer;
+        }
+        .btn-add:hover { opacity: 0.9; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--secondary-color); color: white;
+            padding: 2rem 5%; text-align: center; margin-top: 3rem;
+        }
+        .footer-info p { margin-bottom: 0.5rem; }
+
+        /* Notificación simple */
+        .notification {
+            position: fixed; bottom: 20px; right: 20px;
+            background: var(--primary-color); color: white;
+            padding: 10px 20px; border-radius: 5px;
+            transform: translateY(100px); transition: transform 0.3s;
+        }
+        .notification.show { transform: translateY(0); }
