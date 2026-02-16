@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Brasa - Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <a href="#" class="logo">Sabor & Brasa</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" id="theme-btn">🌙 Modo Oscuro</button>
+            <div class="cart-icon" onclick="alert('Aquí se abriría el detalle del carrito.')">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <h1>Experiencia Gastronómica Única</h1>
+        <p>Los mejores ingredientes, el mejor sabor, directo a tu mesa.</p>
+        <a href="#menu" class="btn-cta">Ordenar Ahora</a>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Nuestros Favoritos</h2>
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Hamburguesa" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Hamburguesa Clásica</h3>
+                    <p class="product-desc">Carne angus, queso cheddar, lechuga fresca y nuestra salsa secreta.</p>
+                    <div class="product-footer">
+                        <span class="price">$12.00</span>
+                        <button class="btn-add" onclick="addToCart()">Añadir</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pizza" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Pizza Artesanal</h3>
+                    <p class="product-desc">Masa madre, tomate italiano, mozzarella fresca y albahaca.</p>
+                    <div class="product-footer">
+                        <span class="price">$15.50</span>
+                        <button class="btn-add" onclick="addToCart()">Añadir</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pasta" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Pasta Carbonara</h3>
+                    <p class="product-desc">Receta tradicional con guanciale, huevo, pecorino y pimienta negra.</p>
+                    <div class="product-footer">
+                        <span class="price">$14.00</span>
+                        <button class="btn-add" onclick="addToCart()">Añadir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-info">
+            <h3>Sabor & Brasa</h3>
+            <p>📍 Calle del Sabor 123, Ciudad Gastronómica</p>
+            <p>📞 +1 234 567 890</p>
+            <p>✉️ hola@saborbrasa.com</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">© 2023 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Notificación Flotante -->
+    <div class="notification" id="notification">¡Producto añadido al carrito! 🛒</div>
+
+    <script src="main.js">
+    </script>
+</body>
+</html>
